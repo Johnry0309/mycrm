@@ -9,6 +9,8 @@ class ReviewSerializer(serializers.ModelSerializer):
 class CRMItemSerializer(serializers.ModelSerializer):
     reviews = ReviewSerializer(many=True, read_only=True)
     average_rating = serializers.ReadOnlyField()
+    # Explicitly make image optional in the serializer
+    image = serializers.ImageField(required=False, allow_null=True)
 
     class Meta:
         model = CRMItem

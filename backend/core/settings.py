@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000", # This is where Next.js runs
     "https://mycrm-omega.vercel.app",
     "https://mycrm-tau.vercel.app",
    
