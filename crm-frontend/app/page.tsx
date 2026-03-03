@@ -20,7 +20,7 @@ export default function Home() {
   // Fetch items from Django Backend
   const fetchItems = async () => {
     try {
-      const res = await fetch('http://127.0.0.1:8000/api/items/');
+      const res = await fetch('https://johnryqadornado03091.pythonanywhere.com/api/items/');
       const data = await res.json();
       setItems(data);
     } catch (err) {
@@ -40,7 +40,7 @@ export default function Home() {
     formData.append('is_active', 'true'); // Automatically make it active/launched
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/items/', {
+      const response = await fetch('https://johnryqadornado03091.pythonanywhere.com/api/items/', {
         method: 'POST',
         body: formData, // Send as FormData to handle images correctly
       });
@@ -62,7 +62,7 @@ export default function Home() {
     if (!confirm("Are you sure you want to delete this CRM?")) return;
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/items/${id}/`, {
+      const res = await fetch(`https://johnryqadornado03091.pythonanywhere.com/api/items/${id}/`, {
         method: 'DELETE',
       });
       if (res.ok) {
@@ -78,8 +78,8 @@ export default function Home() {
       {/* Sidebar */}
       <nav className="w-full md:w-64 bg-slate-900 text-white p-6 shadow-xl">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold tracking-tight text-blue-400">ARVO CRM</h1>
-          <p className="text-xs text-slate-400">http://arvo.team/</p>
+          <h1 className="text-2xl font-bold tracking-tight text-blue-400">Johnry CRM</h1>
+          <p className="text-xs text-slate-400">https://www.facebook.com/JohnryAdornado/</p>
         </div>
         
         <ul className="space-y-3">
@@ -133,7 +133,7 @@ export default function Home() {
                         <div className="flex flex-col gap-2 mt-auto">
                           <button 
                             onClick={() => {
-                              navigator.clipboard.writeText(`http://localhost:3000/rate/${item.id}`);
+                              navigator.clipboard.writeText(`https://mycrm-tau.vercel.app/rate/${item.id}`);
                               alert("Link copied to clipboard!");
                             }}
                             className="w-full bg-blue-50 text-blue-600 py-2 rounded-lg text-sm font-semibold hover:bg-blue-100 transition-colors"

@@ -10,7 +10,7 @@ export default function RateItem() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/items/${id}/`)
+    fetch(`https://johnryqadornado03091.pythonanywhere.com/api/items/${id}/`)
       .then(res => res.json())
       .then(data => setItem(data));
   }, [id]);
@@ -18,7 +18,7 @@ export default function RateItem() {
   const handleSubmit = async () => {
     if (rating === 0) return alert("Please select a rating!");
     
-    const res = await fetch(`http://127.0.0.1:8000/api/reviews/`, {
+    const res = await fetch(`https://johnryqadornado03091.pythonanywhere.com/api/reviews/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ item: id, stars: rating, comment })
@@ -32,7 +32,7 @@ export default function RateItem() {
       <div>
         <h1 className="text-4xl font-bold text-green-600 mb-4">Thank You!</h1>
         <p className="text-slate-600 mb-8">Your feedback helps us improve.</p>
-        <a href="http://arvo.team/" className="text-blue-600 font-bold underline">Return to Arvo Team</a>
+        <a href="https://www.facebook.com/JohnryAdornado/" className="text-blue-600 font-bold underline">Return to CRM</a>
       </div>
     </div>
   );
@@ -42,7 +42,7 @@ export default function RateItem() {
   return (
     <main className="min-h-screen bg-white p-6 max-w-xl mx-auto">
       <header className="text-center mb-8">
-        <h1 className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">ARVO FEEDBACK</h1>
+        <h1 className="text-xs font-bold text-blue-500 uppercase tracking-widest mb-2">CRM FEEDBACK</h1>
         <h2 className="text-2xl font-bold text-slate-900">{item.title}</h2>
         <p className="text-slate-500 mt-2">{item.description}</p>
       </header>
