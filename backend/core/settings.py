@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5e&s126w^9#s!^btsetsqs#-(^jn*i*4%&ky@!hf*@tj*n(e6c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,6 +44,8 @@ INSTALLED_APPS = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000", # This is where Next.js runs
+    "https://mycrm-omega.vercel.app",
+    
 ]
 
 MIDDLEWARE = [
