@@ -133,7 +133,7 @@ export default function Home() {
                         <div className="flex flex-col gap-2 mt-auto">
                           <button 
                             onClick={() => {
-                              navigator.clipboard.writeText(`https://mycrm-tau.vercel.app/rate/${item.id}`);
+                              navigator.clipboard.writeText(`https://mycrm-omega.vercel.app/rate/${item.id}`);
                               alert("Link copied to clipboard!");
                             }}
                             className="w-full bg-blue-50 text-blue-600 py-2 rounded-lg text-sm font-semibold hover:bg-blue-100 transition-colors"
